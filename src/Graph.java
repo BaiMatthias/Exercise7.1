@@ -15,6 +15,11 @@ public class Graph {
 			}
 		}
 		this.anzahlKanten = anzahlKanten;
+		createGraph();
+	}
+	
+	public int[][] getadjList(){
+		return this.adjList;
 	}
 	
 	private void addEdge(int knotenAnfang, int knotenEnde, int weight){
@@ -37,14 +42,13 @@ public class Graph {
 		for(int i = 0; i<adjList.length; i++){
 			for (int j = 0; j<adjList[i].length; j++){
 				System.out.print(adjList[i][j]);
-				System.out.print("  ");
-
+				System.out.print("\t");
 			}
 			System.out.println();
 		}
 	}
 
-	public void createGraph(){
+	private void createGraph(){
 		Random rnd = new Random();
 		for(int i = 0; i < anzahlKanten; i++){
 			int knoten1 = rnd.nextInt(adjList.length);
@@ -58,5 +62,18 @@ public class Graph {
 		}
 	}
 	
+	public void shortestPath(int source, int destination){
+		int[] distance = new int[adjList.length];
+		boolean[] visited = new boolean[adjList.length];
+		int[] parents = new int[adjList.length];
+		Random rnd = new Random();
+		int rndNode = rnd.nextInt(adjList.length);
+		
+		
+	}
+	private int getNeighborNode(int sourceNode){
+		// ToDo
+		return 0;
+	}
 	
 }
